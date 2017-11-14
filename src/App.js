@@ -16,9 +16,6 @@ class BooksApp extends Component {
     BooksAPI.getAll().then((books) => {
       this.setState({books})
     })
-    // BooksAPI.search('React',20).then((searchResults) => {
-    // 	this.setState({searchResults})
-    // })
   }
 
   updateBookshelf = (book, shelf) => {
@@ -44,9 +41,15 @@ class BooksApp extends Component {
     // Use React Router to route user to correct UI
     render() {
       return (<div className="app">
-        <Route exact path='/' render={() => (<ListBookshelves onUpdateBookshelf={this.updateBookshelf} books={this.state.books}/>)}/>
+        <Route exact path='/' render={() => (<ListBookshelves
+					onUpdateBookshelf={this.updateBookshelf}
+					books={this.state.books}/>)}/>
 
-        <Route path='/search' render={() => (<SearchBooks onSearchBooks={this.searchBooks} searchResults={this.state.searchResults}/>)}/>
+        <Route path='/search' render={() => (<SearchBooks
+					onSearchBooks={this.searchBooks}
+					searchResults={this.state.searchResults}
+					onUpdateBookshelf={this.updateBookshelf}
+					books={this.state.books}/>)}/>
       </div>)
     }
   }
