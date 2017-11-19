@@ -59,7 +59,7 @@ class SearchBooks extends Component {
                                     {/* ./book-cover */}
                                     <div className="book-shelf-changer">
                                         <select value={book.shelf} onChange={this.handleShelfChange.bind(this, book)}>
-                                            <option value="none" disabled="disabled">Move to...</option>
+                                            <option  disabled="disabled">Move to...</option>
                                             <option value="currentlyReading">Currently Reading</option>
                                             <option value="wantToRead">Want to Read</option>
                                             <option value="read">Read</option>

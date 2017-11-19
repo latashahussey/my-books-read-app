@@ -16,7 +16,7 @@ class BooksApp extends Component {
             searchResults: []
         }
     }
-    
+
     // Grab all book objects from remote BooksAPI and store them in an array
     componentDidMount() {
         BooksAPI.getAll().then((books) => {
@@ -44,9 +44,25 @@ class BooksApp extends Component {
         @param maxResults {integer}  Max number of search results
      */
     searchBooks = (query, maxResults) => {
+        const {books} = this.state
         if (query.length !== 0) {
             BooksAPI.search(query, maxResults).then((searchResults) => {
+                // Check results for books already on a shelf
+                for(let book in books) {
+                    for(let result in searchResults) {
+                        // If matching book is found in results, add its shelf property, otherwise set shelf to 'none'
+                        if(books[book].id === searchResults[result].id) {
+                            searchResults[result].shelf = books[book].shelf
+                            console.log(searchResults[result].shelf)
+                        } else if(!searchResults[result].shelf) {
+                            searchResults[result].shelf = "none"
+                        }
+                    }
+
+                }
+                // update the state of the searchResults
                 this.setState({searchResults})
+                console.log(searchResults)
             })
         } else {
             BooksAPI.getAll().then((books) => {
@@ -58,7 +74,7 @@ class BooksApp extends Component {
     // Route user to correct UI
     render() {
         return (<div className="app">
-            <Route exact="exact" path='/' render={() => (
+            <Route exact path='/' render={() => (
                 <ListBookshelves
                     onUpdateBookshelf={this.updateBookshelf}
                     books={this.state.books}/>)
