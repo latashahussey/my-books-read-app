@@ -6,12 +6,17 @@ import * as BooksAPI from './BooksAPI'
 import './App.css'
 
 class BooksApp extends Component {
-    // Initialize state
-    state = {
-        books: [],
-        searchResults: []
-    }
 
+    // Constructor for app
+    constructor(props) {
+        super(props)
+        // Initialize state
+        this.state = {
+            books: [],
+            searchResults: []
+        }
+    }
+    
     // Grab all book objects from remote BooksAPI and store them in an array
     componentDidMount() {
         BooksAPI.getAll().then((books) => {
