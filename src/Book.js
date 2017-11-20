@@ -2,6 +2,9 @@ import React, { Component } from 'react'
 
 class Book extends Component {
 
+	// Required props
+	//add bookshelf as required propType
+
     /*
 		@description handleChange Handles book's bookshelf change
 		@param bookId {string} Unique string for books
@@ -17,6 +20,11 @@ class Book extends Component {
         return (
             <ol className="books-grid">
                 {/* Show only those books that meet our criteria */}
+				{for(book in books) {
+				  if(books[book].shelf === groupTitles[groupTitle]){
+					console.log(books[book])
+				  }
+				}
                 {this.props.books.filter((book) => book.shelf === 'currentlyReading').map((book) => (
                     <li key={book.id}>
                         <div className="book">
