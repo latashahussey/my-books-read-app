@@ -53,12 +53,10 @@ class BooksApp extends Component {
                         // If matching book is found in results, add its shelf property, otherwise set shelf to 'none'
                         if(books[book].id === searchResults[result].id) {
                             searchResults[result].shelf = books[book].shelf
-                            console.log(searchResults[result].shelf)
                         } else if(!searchResults[result].shelf) {
                             searchResults[result].shelf = "none"
                         }
                     }
-
                 }
                 // update the state of the searchResults
                 this.setState({searchResults})
