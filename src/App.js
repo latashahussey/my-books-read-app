@@ -1,6 +1,5 @@
 import React, {Component} from 'react'
 import {Route} from 'react-router-dom'
-import Book from './Book'
 import Bookshelf from './Bookshelf'
 import ListBookshelves from './ListBookshelves'
 import SearchBooks from './SearchBooks'
@@ -15,8 +14,23 @@ class BooksApp extends Component {
         // Initialize state
         this.state = {
             books: [],
-            searchResults: []
+            searchResults: [],
+            bookshelves: [
+                {
+                    id: "read",
+                    label: "Read"
+                },
+                {
+                    id: "currentlyReading",
+                    label: "Currently Reading"
+                },
+                {
+                    id: "wantToRead",
+                    label: "Want To Read"
+                }
+            ]
         }
+
     }
 
     // Grab all book objects from remote BooksAPI and store them in an array
@@ -32,6 +46,7 @@ class BooksApp extends Component {
         @param shelf {string} The bookshelf
      */
     updateBookshelf = (book, shelf) => {
+        console.log("Updating bookshelf...")
         console.log(book)
         console.log(shelf)
         BooksAPI.update(book, shelf)
@@ -73,26 +88,26 @@ class BooksApp extends Component {
 
     // Route user to correct UI
     render() {
-        return (<div className="app">
-            <Route exact path='/' render={() => (
-                <ListBookshelves
-                    onUpdateBookshelf={this.updateBookshelf}
-                    books={this.state.books}>
-                    <Bookshelf>
-                        <Book books={this.state.books}/>
-                    </Bookshelf>
-                </ListBookshelves>)
-                }/>
+        return (
+            <div className="app">
+                <Route exact path='/' render={() => (
+                    <ListBookshelves>
+                        <Bookshelf
+                            bookshelves={this.state.bookshelves}
+                            books={this.state.books}
+                            onUpdateBookshelf={this.updateBookshelf}/>
+                    </ListBookshelves>
+                )}/>
 
 
-            <Route path='/search' render={() => (
-                <SearchBooks
-                    onSearchBooks={this.searchBooks}
-                    searchResults={this.state.searchResults}
-                    onUpdateBookshelf={this.updateBookshelf}
-                    books={this.state.books}/>)
+                <Route path='/search' render={() => (
+                    <SearchBooks
+                        onSearchBooks={this.searchBooks}
+                        searchResults={this.state.searchResults}
+                        onUpdateBookshelf={this.updateBookshelf}
+                        books={this.state.books}/>)
                 }/>
-        </div>)
+            </div>)
     }
 }
 
