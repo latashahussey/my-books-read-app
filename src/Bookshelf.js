@@ -11,7 +11,6 @@ class Bookshelf extends Component {
 	}
 
     render() {
-
         // Required parameters for this component
         const {books, bookshelves} = this.props
 
@@ -42,4 +41,6 @@ class Bookshelf extends Component {
         )
     }
 }
+
+// Make component available to app
 export default Bookshelf

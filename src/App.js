@@ -99,7 +99,6 @@ class BooksApp extends Component {
                     </ListBookshelves>
                 )}/>
 
-
                 <Route path='/search' render={() => (
                     <SearchBooks
                         onSearchBooks={this.searchBooks}

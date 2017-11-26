@@ -63,4 +63,5 @@ class Book extends Component {
 		)
 	}
 }
+// Make component available to app
 export default Book

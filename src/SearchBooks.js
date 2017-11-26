@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {Link} from 'react-router-dom'
 import PropTypes from 'prop-types'
 import Book from './Book'
+import {Debounce} from 'react-throttle'
 
 class SearchBooks extends Component {
     // Required property types for component
@@ -31,11 +32,15 @@ class SearchBooks extends Component {
                 <div className="search-books-bar">
                     <Link to="/" className="close-search">Close</Link>
                     <div className="search-books-input-wrapper">
-                        <input type="text" placeholder="Search by title or author" onChange={this.handleSearchTerms.bind(this)}/>
+                        {/* Delay search by 400ms to prevent overloading requests */}
+                        <Debounce time="400" handler="onChange">
+                            <input type="text" placeholder="Search by title or author" onChange={this.handleSearchTerms.bind(this)}/>
+                        </Debounce>
                     </div> {/* ./search-books-input-wrapper */}
                 </div> {/* ./search-books */}
                 <div className="search-books-results">
                     <ol className="books-grid">
+                        {/* Display book */}
                         {searchResults.map((book) => (
                             <Book
                                 book={book}
