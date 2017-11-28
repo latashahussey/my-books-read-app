@@ -1,0 +1,27 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node', '/usr/local/bin/npm', 'start' ]
+2 info using npm@4.0.5
+3 info using node@v7.4.0
+4 verbose run-script [ 'prestart', 'start', 'poststart' ]
+5 info lifecycle @~prestart: @
+6 silly lifecycle @~prestart: no script for prestart, continuing
+7 info lifecycle @~start: @
+8 verbose lifecycle @~start: unsafe-perm in lifecycle true
+9 verbose lifecycle @~start: PATH: /usr/local/lib/node_modules/npm/bin/node-gyp-bin:/Users/tashahussey/ReactPractice/my-reads-app/node_modules/.bin:/usr/local/lib/node_modules/npm/bin/node-gyp-bin:/Users/tashahussey/ReactPractice/my-reads-app/node_modules/.bin:/usr/local/lib/node_modules/npm/bin/node-gyp-bin:/Users/tashahussey/ReactPractice/my-reads-app/node_modules/.bin:/usr/local/lib/node_modules/npm/bin/node-gyp-bin:/Users/tashahussey/ReactPractice/my-reads-app/node_modules/.bin:/usr/local/lib/node_modules/npm/bin/node-gyp-bin:/Users/tashahussey/ReactPractice/my-reads-app/node_modules/.bin:/usr/local/lib/node_modules/npm/bin/node-gyp-bin:/Users/tashahussey/ReactPractice/my-reads-app/node_modules/.bin:/usr/local/lib/node_modules/npm/bin/node-gyp-bin:/Users/tashahussey/ReactPractice/my-reads-app/node_modules/.bin:/usr/local/lib/node_modules/npm/bin/node-gyp-bin:/Users/tashahussey/ReactPractice/my-reads-app/node_modules/.bin:/usr/local/lib/node_modules/npm/bin/node-gyp-bin:/Users/tashahussey/ReactPractice/my-reads-app/node_modules/.bin:/usr/local/lib/node_modules/npm/bin/node-gyp-bin:/Users/tashahussey/ReactPractice/my-reads-app/node_modules/.bin:/usr/local/lib/node_modules/npm/bin/node-gyp-bin:/Users/tashahussey/ReactPractice/my-reads-app/node_modules/.bin:/usr/local/lib/node_modules/npm/bin/node-gyp-bin:/Users/tashahussey/ReactPractice/my-reads-app/node_modules/.bin:/usr/local/lib/node_modules/npm/bin/node-gyp-bin:/Users/tashahussey/ReactPractice/my-reads-app/node_modules/.bin:/usr/local/lib/node_modules/npm/bin/node-gyp-bin:/Users/tashahussey/ReactPractice/my-reads-app/node_modules/.bin:/usr/local/lib/node_modules/npm/bin/node-gyp-bin:/Users/tashahussey/ReactPractice/my-reads-app/node_modules/.bin:/usr/local/lib/node_modules/npm/bin/node-gyp-bin:/Users/tashahussey/ReactPractice/my-reads-app/node_modules/.bin:/usr/local/lib/node_modules/npm/bin/node-gyp-bin:/Users/tashahussey/ReactPractice/my-reads-app/node_modules/.bin:/usr/local/lib/node_modules/npm/bin/node-gyp-bin:/Users/tashahussey/ReactPractice/my-reads-app/node_modules/.bin:/usr/local/lib/node_modules/npm/bin/node-gyp-bin:/Users/tashahussey/ReactPractice/my-reads-app/node_modules/.bin:/usr/local/jdk1.8.131/bin:/Library/Frameworks/Python.framework/Versions/3.5/bin:/Users/tashahussey/.rbenv/shims:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/opt/local/bin:/opt/local/sbin:/opt/local/mysql/bin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/MacGPG2/bin:/usr/local/jdk1.8.131/bin:/Library/Frameworks/Python.framework/Versions/3.5/bin:/Users/tashahussey/.rbenv/shims:/usr/local/sbin:/usr/local/mysql/bin:/opt/local/bin:/opt/local/sbin:/opt/local/mysql/bin
+10 verbose lifecycle @~start: CWD: /Users/tashahussey/ReactPractice/my-reads-app
+11 silly lifecycle @~start: Args: [ '-c', 'npm start' ]
+12 verbose stack Error: write EIO
+12 verbose stack     at exports._errnoException (util.js:1022:11)
+12 verbose stack     at WriteWrap.afterWrite [as oncomplete] (net.js:804:14)
+13 verbose cwd /Users/tashahussey/ReactPractice/my-reads-app
+14 error Darwin 17.2.0
+15 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "start"
+16 error node v7.4.0
+17 error npm  v4.0.5
+18 error code EIO
+19 error errno EIO
+20 error syscall write
+21 error write EIO
+22 error If you need help, you may report this error at:
+22 error     <https://github.com/npm/npm/issues>
+23 verbose exit [ 1, true ]
